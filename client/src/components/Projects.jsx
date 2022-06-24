@@ -9,7 +9,6 @@ const Projects = () => {
     if (loading) return <Spinner />
     if (error) return <p>Something went wrong</p>
 
-    data.projects.map((project) => console.log(project))
     return <>
         {data.projects.length > 0 ? (
             <div className="row mt-4">
