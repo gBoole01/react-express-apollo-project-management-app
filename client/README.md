@@ -2,3 +2,5 @@
 
 - Bootstrap
 - Apollo
+- React Router Dom
+- React Icons
