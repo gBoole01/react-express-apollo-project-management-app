@@ -1,44 +1,46 @@
-import Header from './components/Header';
-import Clients from './components/Clients';
+import Header from './components/Header'
+import Clients from './components/Clients'
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client'
-import AddClientModal from './components/AddClientModal';
+import AddClientModal from './components/AddClientModal'
+import Projects from './components/Projects'
 
 const cache = new InMemoryCache({
-    typePolicies: {
-        Query: {
-            fields: {
-                clients: {
-                    merge(_existing, incoming) {
-                        return incoming
-                    }
-                },
-                projectts: {
-                    merge(_existing, incoming) {
-                        return incoming
-                    }
-                }
-            }
-        }
-    }
-});
+  typePolicies: {
+    Query: {
+      fields: {
+        clients: {
+          merge(_existing, incoming) {
+            return incoming
+          },
+        },
+        projectts: {
+          merge(_existing, incoming) {
+            return incoming
+          },
+        },
+      },
+    },
+  },
+})
 
 const client = new ApolloClient({
-    uri: 'http://localhost:5000/graphql',
-    cache,
+  uri: 'http://localhost:5000/graphql',
+  cache,
 })
 
 function App() {
-    return (
-        <>
-            <ApolloProvider client={client}>
-                <Header />
-                <div className="container">
-                    <AddClientModal />
-                    <Clients />
-                </div>
-            </ApolloProvider>
-        </>
-    );
+  return (
+    <>
+      <ApolloProvider client={client}>
+        <Header />
+        <div className="container">
+          <AddClientModal />
+          <Projects />
+          <Clients />
+        </div>
+      </ApolloProvider>
+    </>
+  )
 }
 
-export default App;
+export default App
