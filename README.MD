@@ -1,7 +1,16 @@
 # Project Management App
 
-MERN Stack with GraphQL API
+This project is a small project management application powered by MERN Stack and GraphQL that allows a user to manage his clients and sideprojects.
 
-**M**ongoDB - **E**xpress - **R**eact - **N**ode
+## Usage
 
-This project is a small project management application that will be able to manage tasks and planning for sideprojects.
+### Frontend
+
+1. `cd client`
+1. `yarn`
+1. `yarn start`
+
+### Backend
+
+1. `yarn`
+1. `yarn start`
